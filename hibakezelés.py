@@ -1,7 +1,7 @@
 
 
 lista=["Bence","László","Ferenc"]
-lista.append("Martin")
+#lista.append("Martin")
 try:
    print(lista[3])
 except:
@@ -11,11 +11,15 @@ else:
 finally:
    print("Ez a vége")
    
-
-try:
-   szam=int(input("Kérek egy számot: "))
-except:
-   pass
-
+szam=""   
+while szam=="":
+   try:
+      szam=int(input("Kérek egy számot: "))
+   except ValueError as e:
+      print(e)
+      print("Ez nem szám")
+   except:
+      print("Ismeretlen szám")
 
 print(szam)
+
