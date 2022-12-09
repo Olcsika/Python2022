@@ -5,7 +5,7 @@ l=[]
 for i in range(10):
     szam=random.random()
     l.append(math.floor(szam*90)+10)
-print(l)
+#print(l)
 
 
 l=[]
@@ -14,10 +14,10 @@ for i in range(10):
     
     l.append(random.randint(10,99))
     
-print(l)
+#print(l)
 
 
-print(random.randint(-1000,1000)*3)
+#print(random.randint(-1000,1000)*3)
 l=[]
 for i in range(100):
     l.append(random.randint(-1000,1000)*3)
@@ -25,17 +25,33 @@ for i in range(100):
 
 l5=[]
 
-print(sum(l))
-
+#print(sum(l))
 for e in l:
    if e%5==0:
       l5.append(e)
 
-print(l5)
+#print(l5)
 
 l5=[e//15 for e in l if e %5==0]
 
-print(l5)
+#print(l5)
+
+167
+1666
+#print(random.randrange(167,1666,2)*6)
+
+#print((random.randint(83,832)*2+1)*6)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
