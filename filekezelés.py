@@ -6,11 +6,9 @@ f.write("\n")
 f.write("kutya")
 
 f.close()
-
+#file tartalma soronként 1
 f=open("proba.txt","r")
-
 szoveg=(f.read())
-
 sorok=szoveg.split("\n")
 print(sorok)
 
