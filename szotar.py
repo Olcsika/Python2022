@@ -1,4 +1,4 @@
-import random
+import random 
 #ez a fv, bekér egy szót és annak jelentését
 #Visszaad:a két bekérés listában
 def szoBeker():
@@ -41,7 +41,21 @@ def beolvas():
 
    
 def kerdez():
-   print(kerdesek)
+    valasztott=random.choice(kerdesek)
+    print("valsztott ",valasztott)
+    rossz=[]
+    for i in range(3):
+        temp=random.choice(kerdesek)
+        print (temp)
+        while temp not in rossz and temp!=valasztott:
+            rossz.append(temp)
+        print(rossz)
+
+    print("-"*45)
+    print("Mit jelent: "+ valasztott[0]+ "?")
+
+    rossz.appned(valasztott)
+    print(rossz)
 
 beolvas()
 kerdez()    
