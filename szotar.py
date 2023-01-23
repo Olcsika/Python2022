@@ -41,15 +41,16 @@ def beolvas():
 
    
 def kerdez():
+    random.seed(2)
     valasztott=random.choice(kerdesek)
     print("valsztott ",valasztott)
     rossz=[]
     for i in range(3):
         temp=random.choice(kerdesek)
-        print (temp)
+        print ("temp",temp)
         while temp not in rossz and temp!=valasztott:
             rossz.append(temp)
-        print(rossz)
+        print("rossz", rossz)
 
     print("-"*45)
     print("Mit jelent: "+ valasztott[0]+ "?")
