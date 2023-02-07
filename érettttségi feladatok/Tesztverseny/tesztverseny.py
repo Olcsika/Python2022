@@ -12,10 +12,50 @@ f.close()
 
 helyes=adatok[0]
 adatok.remove(helyes)
-
 valaszok=[]
 for e in adatok:
     valaszok.append(e.split(" "))
 
 
-print(valaszok)    
+#print(valaszok)    
+
+print("2. feladat: a vetélkedőn "+str(len(valaszok))+" versenyző indult.")
+
+
+versenyzo=input("3. feladat: A versenyző azonosítója = ")
+versenyzoValasza=""
+for e in valaszok:
+    if e[0]==versenyzo:
+        print(e[1]+"\t(a versenyző válasza)")
+        versenyzoValasza=e[1]
+print("{}\t(a versenyző válasza)".format([e[1]for e in valaszok if e[0]==versenyzo][0]))        
+
+        
+
+print("4.feladat ")
+print(helyes+"\t(a helyes válasz)")
+print(versenyzoValasza)
+
+for sorszam,betu in enumerate(versenyzoValasza):
+    #print(betu)
+    if betu==helyes[sorszam]:
+        print("+",end="")
+            
+    else:
+        print(" ",end="")
+
+
+print("\t (A versenyző helyes válaszai)")        
+
+
+
+
+
+
+
+
+
+
+
+
+
