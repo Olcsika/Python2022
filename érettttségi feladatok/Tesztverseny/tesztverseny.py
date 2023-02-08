@@ -45,12 +45,23 @@ for sorszam,betu in enumerate(versenyzoValasza):
         print(" ",end="")
 
 
-print("\t (A versenyző helyes válaszai)")        
+print("\t (A versenyző helyes válaszai)")
+
+
+feladat = int(input("5. feladat: A feladat sroszáma = "))
+
+db=0
+for e in valaszok:
+    if e[1][feladat]==helyes[feladat]:
+        db+=1
+
+print("A feladatra {0} fő, a versenyzők {1}-a adott helyes választ:".format(db,db/len(valaszok)))
+    
 
 
 
 
-
+ 
 
 
 
