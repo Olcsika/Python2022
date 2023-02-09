@@ -1,3 +1,11 @@
+def pontSzamit(valasz,helyes):
+    pont=0
+    for sorszam,betu in enumerate(valasz):
+        if betu==helyes[sorszam]:
+            if sorszam<5:
+                pont+=3
+
+
 f=open("valaszok.txt")
 
 adatok=f.read().split("\n")
@@ -55,7 +63,14 @@ for e in valaszok:
     if e[1][feladat]==helyes[feladat]:
         db+=1
 
-print("A feladatra {0} fő, a versenyzők {1}-a adott helyes választ:".format(db,db/len(valaszok)))
+print("A feladatra {0} fő, a versenyzők {1:.2%}-a adott helyes választ:".format(db,db/len(valaszok)))
+
+f=open("pontok.txt","w")
+for e in valaszok:
+    pont=pontSzamit(e[1],helyes)
+
+f.close()
+    
     
 
 
