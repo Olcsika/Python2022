@@ -1,8 +1,8 @@
 def haromszog():
 
    vissza=[]  
-   for i in range(3)
-      szam="":
+   for i in range(3):
+      szam=""
       while szam=="":
          try:
             szam=int(input("Kérek egy egész számot: "))
