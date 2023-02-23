@@ -1,5 +1,6 @@
 def ado(adosav,alapterulet):
     ar=0
+    alapterulet=int(alapterulet)
     if adosav=="A":
         ar= int(arak[0])*alapterulet
     elif adosav =="B":
@@ -41,4 +42,27 @@ else:
        print("{}utca {}".format(e[1],e[2]))
         
 #print(ado("C",120))
-hazak=[e for e in hazak if e[3]=="A"]
+hazakA=[e for e in hazak if e[3]=="A"]
+
+hazakB=[]
+for e in hazak:
+    if e[3]=="B":
+        hazakB.append(e)
+
+
+hazakC=[e for e in hazak if e[3]=="C"]
+
+for i in range(len(hazakA)):
+    hazakA[i].append(ado(hazakA[i][3],hazak[i][4]))
+    
+
+
+
+
+
+
+
+
+
+    
+
