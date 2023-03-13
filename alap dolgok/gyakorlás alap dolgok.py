@@ -7,6 +7,11 @@ def oszlopVissza(hanyadik):
     return oszlop
 
 
+def t(hanyadik):
+    oszlop=[e[hanyadik-1::hanyadik] for e in tabla]
+    return oszlop
+
+
 
 
 
@@ -117,6 +122,160 @@ for e in tabla:
 print(oszlop)
 print(oszlopVissza(5))
 print(oszlopVissza(10))
+
+oszlop=[e[:3] for e in tabla]
+oszlop=[e[4:7] for e in tabla]
+oszlop=[e[1::2] for e in tabla]
+oszlop=[e[3::4] for e in tabla]
+print(oszlop)
+
+
+
+#függvény adja meg hogy hánnyaol osztaható oszlopokat adjon vissza
+#bekeres amely beker egy számot es az annyival osztható szamokat iratja ki
+
+print(t(int(input("Kérek egy számot: "))))
+
+
+oszlop=[[e[2],e[6],e[0]] for e in tabla]
+print(oszlop)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
