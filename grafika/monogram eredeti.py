@@ -3,11 +3,6 @@ from tkinter import *
 import math
 
 
-
-
-
-
-
 def eltol(pontok, x, y):
     vissza = []
     for e, pont in enumerate(pontok):
