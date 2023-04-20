@@ -6,51 +6,61 @@ import math
 class forgato:
     canvas=0
     vonalak=[]
+    szog=0
+    szogSebesseg=0.5
+    
     def __init__(self,canvas,vonalak):
         self.canvas=canvas
         self.vonalak=vonalak
+        
+        for i,betu in  enumerate (self.vonalak):
+            betu += betu[:2]
+            betu = nagyit(betu,10)
+            self.vonalak[i] = self.eltol(betu,200,200)
+                       
+
     def rajzol(self):
         canvas.delete("all")
-        #szog+=0.5
-        #print(szog)
+        self.szog+=self.szogSebesseg
         for betu in self.vonalak:
-            betu=eltol(betu,-kozep[0],-kozep[1])
-            betu = forgat(betu,szog)
-            betu=eltol(betu,kozep[0],kozep[1])
-            
+            #origóba tol
+            betu=self.eltol(betu,-kozep[0],-kozep[1])
+            #elforgat
+            betu = self.forgat(betu,self.szog)
+            #helyére visszatol
+            betu=self.eltol(betu,kozep[0],kozep[1])
+            #kirajzol
             self.canvas.create_line(betu, fill="black", width=5)
             
-           
+    def eltol(self,pontok, x, y):
+        vissza = []
+        for e, pont in enumerate(pontok):
+            if e % 2 == 0:
+                vissza.append(pont + x)
+            else:
+                vissza.append(pont + y)
+        return vissza
 
+    def nagyit(self,pontok, meret = 1):
+        vissza = []
+        for e in pontok:
+                vissza.append(e * meret)
+        return vissza
 
+    def forgat(self,pontok, szog):
+        vissza = []
+        for i, pont in enumerate(pontok):
+            if i % 2 == 0:
+                szogRadian=math.radians(szog)
+                x = pontok[i]*math.cos(szogRadian) - pontok[i+1]*math.sin(szogRadian)
+                
+                y=pontok[i]*math.sin(szogRadian)+pontok[i+1]*math.cos(szogRadian)
 
-def eltol(pontok, x, y):
-    vissza = []
-    for e, pont in enumerate(pontok):
-        if e % 2 == 0:
-            vissza.append(pont + x)
-        else:
-            vissza.append(pont + y)
-    return vissza
-
-def nagyit(pontok, meret = 1):
-    vissza = []
-    for e in pontok:
-            vissza.append(e * meret)
-    return vissza
-
-def forgat(pontok, szog):
-    vissza = []
-    for i, pont in enumerate(pontok):
-        if i % 2 == 0:
-            szogRadian=math.radians(szog)
-            x = pontok[i]*math.cos(szogRadian) - pontok[i+1]*math.sin(szogRadian)
-            
-            y=pontok[i]*math.sin(szogRadian)+pontok[i+1]*math.cos(szogRadian)
-
-            vissza.append(x)
-            vissza.append(y)
-    return vissza
+                vissza.append(x)
+                vissza.append(y)
+        return vissza
+    
+          
 
 
 
@@ -58,7 +68,7 @@ def forgat(pontok, szog):
 win=Tk()
 
 # Set the size of the tkinter window
-win.geometry("1500x1000")
+win.geometry("1000x500")
 
 # Create a canvas widget
 canvas=Canvas(win, width=900, height=300)
@@ -89,10 +99,7 @@ MATYI = [#M
 elso=forgato(canvas,MATYI)
 
 
-for i,betu in  enumerate (MATYI):
-    betu = nagyit(betu,0.7)
-    betu += betu[:2]
-    betu = eltol(betu,200,200)
+
 
 kozep=[0,0]
 db=0
