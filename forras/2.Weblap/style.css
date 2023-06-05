@@ -5,16 +5,27 @@ body{
 .doboz {
     border: 2px solid rgb(86, 86, 86);
     border-radius: 15px;
+    background-color: rgb(210 237 250);
 }
+.doboz table{
+    border: 2px solid rgb(86, 86, 86);
+    border-radius: 15px;
+}
+
 
 
 .lablec a {
     color: #f00;
     font-weight: bold;
     text-decoration: none;
+    
 }
 
 .lablec a:hover {
     font-style: italic;
     text-decoration: none;
+    color: black;
+}
+p{
+    text-align: justify;
 }
